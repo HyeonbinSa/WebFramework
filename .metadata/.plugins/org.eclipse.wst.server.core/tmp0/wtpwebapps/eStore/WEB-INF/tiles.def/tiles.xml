@@ -17,4 +17,16 @@
 		<put-attribute name="title" value="Products page" />
 		<put-attribute name="body" value="/WEB-INF/views/products.jsp" />
 	</definition>
+		<definition name="admin" extends="base">
+		<put-attribute name="title" value="Administrator page" />
+		<put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
+	</definition>
+	<definition name="productInventory" extends="base">
+		<put-attribute name="title" value="Product Inventory page" />
+		<put-attribute name="body" value="/WEB-INF/views/productInventory.jsp" />
+	</definition>
+	<definition name="addProduct" extends="base">
+		<put-attribute name="title" value="Add Product Page" />
+		<put-attribute name="body" value="/WEB-INF/views/addProduct.jsp" />
+	</definition>
 </tiles-definitions>
