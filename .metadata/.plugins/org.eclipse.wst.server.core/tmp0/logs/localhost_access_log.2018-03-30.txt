@@ -1,0 +1,9 @@
+127.0.0.1 - - [30/Mar/2018:00:12:23 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:24 +0900] "GET /hansung/ HTTP/1.1" 200 9480
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:25 +0900] "GET /hansung/admin HTTP/1.1" 200 3123
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:27 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4704
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:29 +0900] "GET /hansung/admin/productInventory/deleteProduct/4 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:29 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4382
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:34 +0900] "GET /hansung/admin/productInventory/addProduct HTTP/1.1" 200 4301
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:53 +0900] "POST /hansung/admin/productInventory/addProduct HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Mar/2018:00:12:53 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4670

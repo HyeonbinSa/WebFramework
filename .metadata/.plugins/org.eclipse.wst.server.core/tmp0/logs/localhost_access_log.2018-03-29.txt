@@ -71,3 +71,17 @@
 0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:11:43 +0900] "GET /hansung/admin/productInventory/addProduct HTTP/1.1" 200 4177
 0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:12:07 +0900] "POST /hansung/admin/productInventory/addProduct HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:12:07 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4028
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:13:27 +0900] "GET /hansung/ HTTP/1.1" 200 9356
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:13:28 +0900] "GET /hansung/admin HTTP/1.1" 200 2999
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:13:29 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4028
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:18:13:30 +0900] "GET /hansung/admin/productInventory/addProduct HTTP/1.1" 200 4177
+127.0.0.1 - - [29/Mar/2018:23:53:38 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:53:40 +0900] "GET /hansung/ HTTP/1.1" 200 9656
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:53:40 +0900] "GET /hansung/resources/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:53:40 +0900] "GET /hansung/resources/css/carousel.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:53:40 +0900] "GET /favicon.ico HTTP/1.1" 404 1085
+127.0.0.1 - - [29/Mar/2018:23:57:35 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:57:37 +0900] "GET /hansung/ HTTP/1.1" 200 9480
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:57:43 +0900] "GET /hansung/admin HTTP/1.1" 200 3123
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:57:46 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4694
+0:0:0:0:0:0:0:1 - - [29/Mar/2018:23:58:05 +0900] "GET /hansung/admin/productInventory HTTP/1.1" 200 4704
