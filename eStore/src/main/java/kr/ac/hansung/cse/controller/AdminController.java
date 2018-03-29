@@ -53,4 +53,21 @@ public class AdminController {
 		}
 		return "redirect:/admin/productInventory";
 	}
+	@RequestMapping(value="/productInventory/updateProduct/{id}", method=RequestMethod.GET)
+	public String updateProduct(@PathVariable int id, Model model) {
+		
+		Product product = productService.getProductById(id);
+		
+		model.addAttribute("product", product);
+		
+		return "updateProduct";
+		
+	}
+	@RequestMapping(value="/productInventory/updateProduct", method=RequestMethod.POST)
+	public String updateProductPost(Product product) {
+		if(!productService.updateProduct(product)) {
+			System.out.println("Updating product cannot be done");
+		}
+		return "redirect:/admin/productInventory";
+	}
 }
