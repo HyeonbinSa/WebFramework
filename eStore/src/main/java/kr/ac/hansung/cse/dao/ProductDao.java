@@ -53,8 +53,7 @@ public class ProductDao {
 		String description = product.getDescription();
 
 		String sqlStatement = "insert into product (name, category, price, manufacturer, unitInStock, description) value (?, ?, ?, ?, ?, ?)";
-		return (jdbcTemplate.update(sqlStatement,
-				new Object[] { name, category, price, manufacturer, unitInStock, description }) == 1);
+		return (jdbcTemplate.update(sqlStatement,	new Object[] { name, category, price, manufacturer, unitInStock, description }) == 1);
 	}
 
 	public boolean deleteProduct(int id) {

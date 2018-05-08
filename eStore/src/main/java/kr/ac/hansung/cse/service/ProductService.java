@@ -17,22 +17,16 @@ public class ProductService {
 	public List<Product> getProducts(){
 		return productDao.getProducts();
 	}
-
 	public boolean addProduct(Product product) {
 		return productDao.addProduct(product);
 	}
-
 	public boolean deleteProduct(int id) {
-		// TODO Auto-generated method stub
 		return productDao.deleteProduct(id);
 	}
-
 	public Product getProductById(int id) {
-		
 		return productDao.getProductById(id);
 				
 	}
-
 	public boolean updateProduct(Product product) {
 		return productDao.updateProduct(product);
 	}

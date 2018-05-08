@@ -11,6 +11,7 @@
 		<div class="form-group">
 			<label for="name">Name</label>
 			<sf:input path="name" id="name" class="form-control"/>
+			<sf:errors path="name" cssStyle="color:#ff0000;"/>
 		</div>
 		<div class="form-group">
 			<label for="category">Category: </label>
@@ -23,16 +24,19 @@
 			<sf:textarea path="description" id="description" class="form-control"/>
 		</div>
 		<div class="form-group">
-			<label for="price">Name</label>
+			<label for="price">Price</label>
 			<sf:input path="price" id="price" class="form-control"/>
+			<sf:errors path="price" cssStyle="color:#ff0000;"/>
 		</div>
 		<div class="form-group">
 			<label for="unitInStock">unitInStock</label>
 			<sf:input path="unitInStock" id="unitInStock" class="form-control"/>
+			<sf:errors path="unitInStock" cssStyle="color:#ff0000;"/>
 		</div>
 		<div class="form-group">
 			<label for="manufacturer">manufacturer</label>
 			<sf:input path="manufacturer" id="manufacturer" class="form-control"/>
+			<sf:errors path="manufacturer" cssStyle="color:#ff0000;"/>
 		</div>
 		<input type="submit" value = "submit" class="btn btn-default">
 		<a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Cancel</a>
