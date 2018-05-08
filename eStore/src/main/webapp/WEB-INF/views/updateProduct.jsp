@@ -7,7 +7,8 @@
 	<div class="container">
 		<h1>Update Product</h1>
 		<p class="lead">Fill the below information to add a product:</p>
-		<sf:form action="${pageContext.request.contextPath}/admin/productInventory/updateProduct" method="post" modelAttribute="product">
+		<sf:form action="${pageContext.request.contextPath}/admin/productInventory/updateProduct"
+				 method="post" modelAttribute="product" enctype="multipart/form-data">
 		
 		<sf:hidden path="id"/><!-- 이걸 넣어줘야 update 할때 id값을 넣어 보내줌, 안넣어줄 경우 update 시 id = 0 으로 됨 -->
 		<div class="form-group">
@@ -40,6 +41,11 @@
 			<sf:input path="manufacturer" id="manufacturer" class="form-control"/>
 			<sf:errors path="manufacturer" cssStyle="color:#ff0000;"/>
 		</div>
+		<div class="form-group">
+			<label for="productImage">Upload Picture</label>
+			<sf:input path="productImage" id="productImage" type="file" class="form-control"/>
+		</div>
+		
 		<input type="submit" value = "submit" class="btn btn-default">
 		<a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Cancel</a>
 		</sf:form>
