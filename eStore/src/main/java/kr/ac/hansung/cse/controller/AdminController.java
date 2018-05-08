@@ -53,17 +53,14 @@ public class AdminController {
 			}
 			return "addProduct";
 		}
-		if(!productService.addProduct(product)) {
-			System.out.println("Adding product cannot be done");
-		}
+		productService.addProduct(product);
 		return "redirect:/admin/productInventory";
 	}
 	
 	@RequestMapping(value="/productInventory/deleteProduct/{id}", method=RequestMethod.GET)
 	public String deleteProduct(@PathVariable int id) {
-		if(!productService.deleteProduct(id)) {
-			System.out.println("Deleting product cannot be done");
-		}
+		Product product = productService.getProductById(id);
+		productService.deleteProduct(product);
 		return "redirect:/admin/productInventory";
 	}
 	@RequestMapping(value="/productInventory/updateProduct/{id}", method=RequestMethod.GET)
@@ -86,9 +83,7 @@ public class AdminController {
 			}
 			return "updateProduct";
 		}
-		if(!productService.updateProduct(product)) {
-			System.out.println("Updating product cannot be done");
-		}
+		productService.updateProduct(product);
 		return "redirect:/admin/productInventory";
 	}
 }

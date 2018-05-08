@@ -1,20 +1,60 @@
 package kr.ac.hansung.cse.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
-import javax.sql.DataSource;
-
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.hansung.cse.model.Product;
 
 @Repository
+@Transactional
+@EnableTransactionManagement
 public class ProductDao {
+	// JdbcTemplate -> Hibernate
+	//Hibernate를 이용한 Dao
+	@Autowired
+	private SessionFactory sessionFactory;//Bean으로 등록된 sessionFactory 주입
+	
+	public Product getProductById(int id) {//id를 통해 product 조회
+		Session session = sessionFactory.getCurrentSession();
+		Product product = (Product)session.get(Product.class, id);//record를 읽음.
+		
+		return 	product;
+	}
+	@SuppressWarnings("unchecked")
+	public List<Product> getProducts(){
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from Product");
+		List<Product> productList = query.list();
+		
+		return productList;
+	}
+	
+	public void addProduct(Product product) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(product);
+		session.flush();//@Transactional 에 의해 자동적으로 메소드 끝날때 flush 해주기 때문에 안 넣어줘도 됨.
+	}
+	
+	public void deleteProduct(Product product) {
+		Session session = sessionFactory.getCurrentSession();
+		session.delete(product);
+		session.flush();
+	}
+	
+	public void updateProduct(Product product) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(product);
+		session.flush();
+	}
+	//JdbcTemplate를 이용한 Dao
+	/*
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
@@ -98,4 +138,5 @@ public class ProductDao {
 		return (jdbcTemplate.update(sqlStatement,
 				new Object[] { name, category, price, manufacturer, unitInStock, description, id }) == 1);
 	}
+	*/
 }

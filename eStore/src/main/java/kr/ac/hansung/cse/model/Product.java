@@ -1,14 +1,21 @@
 package kr.ac.hansung.cse.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
+@Entity
+@Table(name="product")
 public class Product {
 		@Override
 	public String toString() {
@@ -16,6 +23,9 @@ public class Product {
 				+ ", manufacturer=" + manufacturer + ", unitInStock=" + unitInStock + ", description=" + description
 				+ "]";
 	}
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//MySql은 AUTO로 하면 table이 됨. IDENTITY를 이용
+	@Column(name="product_id")
 	private int id;
 	
 	@NotEmpty(message="The product name must not be null")
