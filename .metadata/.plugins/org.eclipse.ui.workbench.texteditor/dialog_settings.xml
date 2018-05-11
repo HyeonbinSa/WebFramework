@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot; /&gt;"/>
 			<item value="hansung"/>
 		</list>
 		<list key="replacehistory">

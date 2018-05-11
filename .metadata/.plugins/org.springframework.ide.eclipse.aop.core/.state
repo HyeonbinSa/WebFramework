@@ -9,5 +9,6 @@
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:midStore|3:src/main/webapp/WEB-INF/spring/appServlet/dao-context.xml|7:beans:8|8:productDao:8" bean-file="/midStore/src/main/webapp/WEB-INF/spring/appServlet/dao-context.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/midStore/src/main/webapp/WEB-INF/spring/appServlet/dao-context.xml" source="=midStore/C:\/Users\/smbil\/.m2\/repository\/org\/springframework\/spring-tx\/4.3.12.RELEASE\/spring-tx-4.3.12.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=midStore/src\/main\/java&lt;kr.ac.hansung.cse.dao{ProductDao.java[ProductDao~getProducts" target-start-line="29"/>
 </aspect-definition>
 </aop-project>
+<aop-project name="helloRest"/>
 <aop-project name="eStore"/>
 </aop-reference-model>
