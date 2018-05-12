@@ -4,7 +4,7 @@
 	pageEncoding="UTF-8"%>
 
 
-<div class="container-wrapper">
+
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -194,6 +194,6 @@
 		<!-- /END THE FEATURETTES -->
 
 	</div>
-</div>
+
 <!-- /.container -->
 
