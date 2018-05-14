@@ -7,7 +7,7 @@
 	<div class="container">
 		<h1>Update Product</h1>
 		<p class="lead">Fill the below information to add a product:</p>
-		<sf:form action="${pageContext.request.contextPath}/admin/productInventory/updateProduct"
+		<sf:form action="${pageContext.request.contextPath}/admin/productInventory/updateProduct?${_csrf.parameterName}=${_csrf.token}"
 				 method="post" modelAttribute="product" enctype="multipart/form-data">
 		
 		<sf:hidden path="id"/><!-- 이걸 넣어줘야 update 할때 id값을 넣어 보내줌, 안넣어줄 경우 update 시 id = 0 으로 됨 -->
