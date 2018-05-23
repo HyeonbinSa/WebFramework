@@ -38,6 +38,10 @@ public class User {
 	@JoinColumn(unique=true)//외래키 (반드시 유일한 값이 들어감 unique=true, 1대1이기 때문)
 	private ShippingAddress shippingAddress;// 배송주소를 담기 위함.
 	
+	@OneToOne(optional=false, cascade=CascadeType.ALL)
+	@JoinColumn(unique=true)
+	private Cart cart;
+	
 	private boolean enabled=false;
 	private String authority;
 }

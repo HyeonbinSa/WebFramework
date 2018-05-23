@@ -1,5 +1,7 @@
 package kr.ac.hansung.cse.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,9 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name="product")
-public class Product {
+public class Product implements Serializable{
+	static final long serialVersionUID = -6047829228948525963L;
+
 		@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price
