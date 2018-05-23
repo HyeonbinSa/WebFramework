@@ -61,11 +61,14 @@ public class CartRestController {
 		
 		User user = userService.getUserByName(username);
 		Cart cart = user.getCart();
-
+		
 		List<CartItem> cartItems = cart.getCartItems();
-
+		
 		for (int i = 0; i < cartItems.size(); i++) {
 			if (product.getId() == cartItems.get(i).getProduct().getId()) {
+/*				if(product.getUnitInStock()<=cartItems.get(i).getQuantity()) {
+					return new ResponseEntity<>(HttpStatus.);
+				}*/
 				CartItem cartItem = cartItems.get(i);
 				cartItem.setQuantity(cartItem.getQuantity() + 1);
 				cartItem.setTotalPrice(product.getPrice() * cartItem.getQuantity());
@@ -101,5 +104,58 @@ public class CartRestController {
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		 
+	}
+	@RequestMapping(value = "/plus/{productId}", method = RequestMethod.PUT)
+	public ResponseEntity<Void> plusItem(@PathVariable(value = "productId") int productId) {
+		
+		Product product = productService.getProductById(productId);
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String username = authentication.getName();
+		
+		User user = userService.getUserByName(username);
+		Cart cart = user.getCart();
+		
+		List<CartItem> cartItems = cart.getCartItems();
+		
+		for (int i = 0; i < cartItems.size(); i++) {
+			if (product.getId() == cartItems.get(i).getProduct().getId() && product.getUnitInStock()>cartItems.get(i).getQuantity()) {
+				CartItem cartItem = cartItems.get(i);
+				cartItem.setQuantity(cartItem.getQuantity() + 1);
+				cartItem.setTotalPrice(product.getPrice() * cartItem.getQuantity());
+				cartItemService.addCartItem(cartItem);
+
+				return new ResponseEntity<>(HttpStatus.OK);
+			}
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+	@RequestMapping(value = "/minus/{productId}", method = RequestMethod.PUT)
+	public ResponseEntity<Void> minusItem(@PathVariable(value = "productId") int productId) {
+		
+		Product product = productService.getProductById(productId);
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String username = authentication.getName();
+		
+		User user = userService.getUserByName(username);
+		Cart cart = user.getCart();
+		
+		List<CartItem> cartItems = cart.getCartItems();
+		
+		for (int i = 0; i < cartItems.size(); i++) {
+			if (product.getId() == cartItems.get(i).getProduct().getId() && 0 < cartItems.get(i).getQuantity()) {
+				CartItem cartItem = cartItems.get(i);
+				cartItem.setQuantity(cartItem.getQuantity() - 1);
+				cartItem.setTotalPrice(product.getPrice() * cartItem.getQuantity());
+				if(cartItem.getQuantity()==0) {
+					cartItemService.removeCartItem(cartItem);
+				}else {
+					cartItemService.addCartItem(cartItem);
+				}
+				return new ResponseEntity<>(HttpStatus.OK);
+			}
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

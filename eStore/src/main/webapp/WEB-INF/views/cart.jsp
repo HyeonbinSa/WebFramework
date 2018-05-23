@@ -22,13 +22,13 @@
 					<i class="fa fa-trash"></i>Clear Cart
 				</a>
 				<br/>
-				<table class="table table-hover">
+				<table class="table table-hover" style="width:100%">
 					<tr>
-						<th>Product</th>
-						<th>Unit Price</th>
-						<th>Quantity</th>
-						<th>Total price</th>
-						<th>Action</th>
+						<th width="17.5%">Product</th>
+						<th width="17.5%">Unit Price</th>
+						<th width="17.5%">Quantity</th>
+						<th width="17.5%">Total price</th>
+						<th width="30%">Action</th>
 					</tr>
 					
 					<tr ng-repeat="item in cart.cartItems">
@@ -38,9 +38,9 @@
 						<td>{{item.totalPrice}}</td>
 						<td><a class="btn btn-danger" ng-click="removeFromCart(item.product.id)" style="color:white">
 							<i class="fa fa-times"></i>Remove</a>
-							<a class="btn btn-danger" ng-click="removeFromCart(item.product.id)" style="color:white">
+							<a class="btn btn-danger" ng-click="plusFromCart(item.product.id)" style="color:white">
 							<i class="fa fa-plus"></i>plus</a>
-							<a class="btn btn-danger" ng-click="removeFromCart(item.product.id)" style="color:white">
+							<a class="btn btn-danger" ng-click="minusFromCart(item.product.id)" style="color:white">
 							<i class="fa fa-minus"></i>minus</a>
 						</td>
 					</tr>

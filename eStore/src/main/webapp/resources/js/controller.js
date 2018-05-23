@@ -47,6 +47,31 @@ cartApp.controller('cartCtrl',function($scope, $http){//컨트롤러 정의(생�
 			console.log(response.data);
 		});
 	};
+	
+	$scope.plusFromCart = function(productId){
+		$scope.setCsrfToken();
+		
+		$http.put('/eStore/api/cart/plus/'+productId).then(
+				function successCallback(){
+					//alert("제품이 성공적으로 카트에 담겼습니다.");
+					$scope.refreshCart();
+				},function errorCallback(response){
+					alert("재고가 부족합니다.");
+					$scope.refreshCart();
+		});
+	};
+	$scope.minusFromCart = function(productId){
+		$scope.setCsrfToken();
+		
+		$http.put('/eStore/api/cart/minus/'+productId).then(
+				function successCallback(){
+					//alert("제품이 성공적으로 카트에 담겼습니다.");
+					$scope.refreshCart();
+				},function errorCallback(response){
+					alert("0 밑으로 안됩니다.");
+					$scope.refreshCart();
+		});
+	};
 	$scope.calGrandTotal = function(){
 		var grandTotal = 0;
 		

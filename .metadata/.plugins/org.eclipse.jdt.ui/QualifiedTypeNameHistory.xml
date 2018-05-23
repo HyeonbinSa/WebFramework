@@ -41,11 +41,11 @@
 <fullyQualifiedTypeName name="kr.ac.hansung.cse.model.CartItem"/>
 <fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
 <fullyQualifiedTypeName name="kr.ac.hansung.cse.service.UserService"/>
 <fullyQualifiedTypeName name="kr.ac.hansung.cse.model.User"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 </qualifiedTypeNameHistroy>
