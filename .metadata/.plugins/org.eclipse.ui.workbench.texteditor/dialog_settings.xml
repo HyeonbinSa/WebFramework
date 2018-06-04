@@ -2,14 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="Aspect" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot; /&gt;"/>
-			<item value="hansung"/>
+			<item value="aspectj"/>
+			<item value="aspect"/>
+			<item value="lom"/>
+			<item value="mysql"/>
+			<item value="commons-dbcp"/>
+			<item value="spring-jdbc"/>
+			<item value="commons"/>
+			<item value="commos"/>
+			<item value="jdbc"/>
+			<item value="spring-context"/>
+			<item value="log4j"/>
+			<item value="slf4j-log4j12"/>
+			<item value="jcl-over-slf4j"/>
+			<item value="slf4j-api"/>
+			<item value="logback-classic"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -18,7 +31,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="343" key="DIALOG_X_ORIGIN"/>
-		<item value="263" key="DIALOG_Y_ORIGIN"/>
+		<item value="239" key="DIALOG_X_ORIGIN"/>
+		<item value="320" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
