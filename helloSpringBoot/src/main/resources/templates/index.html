@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 타임리프에 대한 namespace를 넣어준다. -->
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="utf-8" />
 </head>
-<body>
 
+<!-- th:text replaces the body of a tag -->
+ <body>
+	<div th:text="${message}"></div><!-- controller 에서 message에 "hello World"란 값을 넣어뒀음 -->
 </body>
+
 </html>
